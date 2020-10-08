@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.Models
 {
-    public class Ventil
+    public interface IVentilRepository
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public bool IsActive { get; set; }
+        Ventil GetVentil(int id);
+        IEnumerable<Ventil> GetAllVentil();
     }
 }

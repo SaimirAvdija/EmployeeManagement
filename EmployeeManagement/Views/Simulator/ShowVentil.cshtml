@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Ventil>
+
+
+@{
+    ViewBag.Title = "Ventil List";
+}
+
+<div class="card-deck">
+    @foreach (var ventil in Model)
+    {
+        <div class="card m-3">
+            <div class="card-header">
+                <h3>@ventil.Name</h3>
+            </div>
+            <img class="card-img-top" src="~/images/Valve.png"
+                 asp-append-version="true" />
+            <div class="card-footer text-center">
+                <a asp-controller="simulator" asp-action="ventildetails" asp-route-id="@ventil.Id"
+                   class="btn btn-primary m-1">View</a>
+                <a href="#" class="btn btn-primary m-1">Edit</a>
+            </div>
+        </div>
+    }
+</div>
